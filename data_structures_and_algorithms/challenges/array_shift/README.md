@@ -12,4 +12,4 @@
 ## Solution
 
 
-![image](assets/insertShiftArray.png)
+![image](../../../assets/insertShiftArray.png)
