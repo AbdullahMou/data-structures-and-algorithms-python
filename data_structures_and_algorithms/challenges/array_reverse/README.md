@@ -11,5 +11,5 @@
 
 ## Solution
 
-
+<img src="assets/reverseArray.png" alt= "reversed array">
 ![image](assets/reverseArray.png)
