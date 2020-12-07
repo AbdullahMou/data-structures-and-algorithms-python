@@ -35,6 +35,47 @@ def test_string(ll):
 
 
 
+def test_append():
+    ll = LinkedList()
+    ll.append(3)
+    ll.append(5)
+    ll.append(7)
+
+    assert ll.head.value == 3
+    assert ll.head.next.value ==5
+    assert ll.head.next.next.value ==7
+    assert ll.head.next.next.next ==None
+
+def test_insert_before():
+    ll = LinkedList()
+    ll.insert_before(3,1)
+
+    assert ll.head.value == 1
+
+def test_insert_before_1():
+    ll = LinkedList()
+    ll.append(5)
+    ll.append(7)
+    ll.insert_before(5,1)
+
+    assert ll.head.value == 1
+
+
+def test_insert_after():
+    ll = LinkedList()
+    ll.insert_after(5,1)
+
+    assert ll.head.value == 1
+
+def test_insert_after_1():
+    ll = LinkedList()
+    ll.append(5)
+    ll.append(7)
+    ll.insert_after(5,1)
+
+    assert ll.head.next.value == 1
+
+
 @pytest.fixture
 def ll():
     ll = LinkedList()
@@ -42,3 +83,10 @@ def ll():
     ll.insert(7)
     ll.insert(9)
     return ll
+
+# @pytest.fixture
+# def ll_2():
+#     ll = LinkedList()
+#     ll.append(3)
+#     ll.append(5)
+#     ll.append(7)
