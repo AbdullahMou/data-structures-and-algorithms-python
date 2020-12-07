@@ -42,10 +42,10 @@ class LinkedList:
         string =''
         current = self.head
         while current!=None:
-                string+=f'{{ {current.value} }} -> '
-                current=current.next
-                if current == None:
-                    string+= 'NULL'
+            string+=f'{{ {current.value} }} -> '
+            current=current.next
+            if current == None:
+                string+= 'NULL'
         return string
 
         
@@ -58,8 +58,7 @@ class LinkedList:
             while current.next:
                 current=current.next
             current.next=node    
-
-        
+    
 
 
     def insert_before(self,val, newVal):
@@ -78,7 +77,7 @@ class LinkedList:
                         current.next=node
                         break
                     current=current.next
-                    return f'{val} dosent exist'
+                    print(f'nomber : {val} dosent exist')
 
 
 
@@ -95,11 +94,23 @@ class LinkedList:
                     current.next=node
                     break
                 current=current.next
-                return f'{val} dosent exist'
-
-           
+                print(f'nomber : {val} dosent exist')
 
 
+    def ll_kth_from_end(self,k):
+        vals=[]
+        current = self.head
+        if current == None: return ("Sorry No lenked list available")
+        elif k<0: return ("nigative value is'nt acceptable")
+        else:
+            while current:
+                vals += [current.value]
+                current = current.next
+                
+            try:
+                return vals[::-1][k]
+            except IndexError:
+                return (f"index doesn't exist")
 
 #-------------------------------------------------------------------------
 if __name__ == "__main__":
@@ -110,9 +121,10 @@ if __name__ == "__main__":
     # node.insert(7)
     # node.insert(6)
     # node.append(1)
-    node.append(3)
-    node.append(5)
+    # node.append(3)
+    # node.append(5)
     # node.insert_after(5,2)
     # node.insert_before(1,4)
     # print(node.includes(6))
-    print(node)
+    print(node.ll_kth_from_end(-1))
+    # print(node)

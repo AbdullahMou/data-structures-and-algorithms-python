@@ -75,6 +75,19 @@ def test_insert_after_1():
 
     assert ll.head.next.value == 1
 
+def test_from_end(ll):
+  
+    assert ll.ll_kth_from_end(99) =="index doesn't exist"
+    assert ll.ll_kth_from_end(1) ==7
+    assert ll.ll_kth_from_end(-11) =="nigative value is'nt acceptable"
+
+def test_from_end_1():
+    ll = LinkedList()
+    assert ll.ll_kth_from_end(0) =="Sorry No lenked list available"
+
+    ll.append(5)    
+    assert ll.ll_kth_from_end(0) ==5
+    
 
 @pytest.fixture
 def ll():
