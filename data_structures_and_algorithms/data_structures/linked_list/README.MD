@@ -9,5 +9,8 @@ this code will loop over an array and serch for the first value and add the seco
 
 ## Solution
 ![image](../../../assets/linked_list_0.png)
+</br></br>
 ![image](../../../assets/linked_list.png)
+</br></br>
+![image](../../../assets/linked_list1.png)
 
