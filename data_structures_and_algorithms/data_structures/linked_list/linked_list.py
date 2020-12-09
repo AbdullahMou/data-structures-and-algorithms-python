@@ -1,4 +1,3 @@
-
 class Node:
     def __init__(self,val,next=None):
         self.value=val
@@ -97,6 +96,7 @@ class LinkedList:
                 print(f'nomber : {val} dosent exist')
 
 
+  
     def ll_kth_from_end(self,k):
         vals=[]
         current = self.head
@@ -112,19 +112,49 @@ class LinkedList:
             except IndexError:
                 return (f"index doesn't exist")
 
+ 
+    def zipLists(self,list1,list2):
+        list3 =LinkedList()
+        current1 =list1.head
+        current2 =list2.head
+        while current1 and current2:
+             list3.append(current1.value)
+             list3.append(current2.value)
+             current1=current1.next
+             current2=current2.next
+        while current2 :
+            list3.append(current2.value)
+            current2=current2.next     
+        while current1 :
+            list3.append(current1.value)
+            current1=current1.next
+        return list3
+
+
+
 #-------------------------------------------------------------------------
 if __name__ == "__main__":
     # node1 = Node(5)
     node=LinkedList()
+    node2=LinkedList()
+
+    node.append(1)
+    node.append(3)
     # print(node1.value)
     # node.insert(5)
     # node.insert(7)
     # node.insert(6)
-    # node.append(1)
-    # node.append(3)
     # node.append(5)
+    # node.append(7)
     # node.insert_after(5,2)
     # node.insert_before(1,4)
     # print(node.includes(6))
-    print(node.ll_kth_from_end(-1))
+    # print(node.ll_kth_from_end(-1))
     # print(node)
+    node2.append(9)
+    node2.append(10)
+    node2.append(11)
+    node2.append(10)
+
+    print(node.zipLists(node,node2))
+    
