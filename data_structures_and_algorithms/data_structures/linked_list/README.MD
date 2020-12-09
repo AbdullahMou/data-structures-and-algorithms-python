@@ -14,3 +14,5 @@ this code will loop over an array and serch for the first value and add the seco
 </br></br>
 ![image](../../../assets/linked_list1.png)
 
+</br></br>
+![image](../../../assets/linked_list_2.png)

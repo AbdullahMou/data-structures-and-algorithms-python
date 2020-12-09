@@ -88,6 +88,17 @@ def test_from_end_1():
     ll.append(5)    
     assert ll.ll_kth_from_end(0) ==5
     
+def test_zipLists():
+    node=LinkedList()
+    node1=LinkedList()
+    node2=LinkedList()
+    node1.append(1)
+    node1.append(3)
+    node2.append(9)
+    node2.append(10)
+    node2.append(11)
+    node2.append(10)
+    assert node.zipLists(node1,node2).__str__() == '{ 1 } -> { 9 } -> { 3 } -> { 10 } -> { 11 } -> { 10 } -> NULL'
 
 @pytest.fixture
 def ll():
