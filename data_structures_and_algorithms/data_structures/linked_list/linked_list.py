@@ -118,10 +118,10 @@ class LinkedList:
         current1 =list1.head
         current2 =list2.head
         while current1 and current2:
-             list3.append(current1.value)
-             list3.append(current2.value)
-             current1=current1.next
-             current2=current2.next
+            list3.append(current1.value)
+            list3.append(current2.value)
+            current1=current1.next
+            current2=current2.next
         while current2 :
             list3.append(current2.value)
             current2=current2.next     
@@ -130,6 +130,42 @@ class LinkedList:
             current1=current1.next
         return list3
 
+
+    # def palind(self):
+    #     list2 = []
+
+    #     current =self.head
+
+    #     while current:
+
+    #         list2.append(current)
+
+    #         current= current.next
+
+
+
+        # isPalind =True
+
+        # current =self.head
+
+        # while current:
+
+                
+
+        #     value= list2.pop()
+
+        #     if current == value :
+
+        #         isPalind = True
+
+        #     else:
+        #         isPalind=False
+            
+        #     current = current.next
+
+
+
+        # return isPalind
 
 
 #-------------------------------------------------------------------------
@@ -151,10 +187,10 @@ if __name__ == "__main__":
     # print(node.includes(6))
     # print(node.ll_kth_from_end(-1))
     # print(node)
-    node2.append(9)
-    node2.append(10)
-    node2.append(11)
-    node2.append(10)
+    node.append(4)
+    node.append(3)
+    node.append(1)
+    # node2.append(10)
 
-    print(node.zipLists(node,node2))
+    print(node.palind())
     
