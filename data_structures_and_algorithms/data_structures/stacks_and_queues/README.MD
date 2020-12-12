@@ -12,4 +12,5 @@ and  returen `empty` for empty list
 
 
 ## Solution
+`https://github.com/AbdullahMou/data-structures-and-algorithms-python/pull/6`
 ![image](../../../assets/stack_queue1.png)
