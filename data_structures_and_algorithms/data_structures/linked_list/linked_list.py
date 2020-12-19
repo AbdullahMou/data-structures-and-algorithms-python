@@ -192,5 +192,5 @@ if __name__ == "__main__":
     node.append(1)
     # node2.append(10)
 
-    print(node.palind())
+    # print(node.palind())
     
