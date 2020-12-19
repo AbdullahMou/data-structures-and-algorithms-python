@@ -80,23 +80,19 @@ class B_s_t(Binary_tree):
         if not self.root:
             return False
         else:    
-            curr=(self.root)
-            def _walk(curr):
-                if val == curr.value:
-                    return True
-                if val<curr.value:
-                    curr=curr.left
-                    if curr:
-                        return _walk(curr)
-                if val> curr.value:
-                    curr=curr.right
-                    if curr:
-                        return _walk(curr.right)  
-                    
-            if _walk(curr)==True:
+            if self.root == val:
                 return True
-            else: 
-                return False        
+            else:
+                def _walk(node):
+                    if node:
+                        if val == node.value :
+                            return True
+                        elif val<node.value:
+                            return _walk(node.left)
+                        elif val>node.value:
+                            return _walk(node.right)
+                    return False
+                return _walk(self.root)       
 
 
 
@@ -122,4 +118,4 @@ if __name__ == "__main__":
     bst.add(3)
     bst.add(8)
     bst.add(5)
-    print(bst.contains(0))
+    print(bst.contains(-5))
