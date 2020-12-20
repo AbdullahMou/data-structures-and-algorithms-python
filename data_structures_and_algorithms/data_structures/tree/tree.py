@@ -9,16 +9,17 @@ class Node :
 class Binary_tree:
     def __init__(self):
         self.root=None
+        self.max=0
 
     
     def preorder(self):
         lst=[]
         def _walk(node):
             lst.append(node.value)
-            if node.right:
-                _walk(node.right)
             if node.left:
                 _walk(node.left)
+            if node.right:
+                _walk(node.right)    
 
         _walk(self.root)
         return lst
@@ -40,7 +41,7 @@ class Binary_tree:
         return lst
 
 
-    def post_order():
+    def post_order(self):
         lst=[]
         def _walk(node):
 
@@ -54,6 +55,23 @@ class Binary_tree:
 
         _walk(self.root)
         return lst
+
+
+    def find_maximum(self):
+        if not self.root:
+            return 'no binary tree'
+        else:
+            def _walk(node):
+                if node.value>self.max:
+                    self.max=node.value    
+                if node.left:
+                    _walk(node.left)
+                if node.right:
+                   _walk(node.right)
+            _walk(self.root)   
+            return self.max    
+                        
+                 
 
 
 class B_s_t(Binary_tree):
@@ -103,12 +121,14 @@ if __name__ == "__main__":
 
     bt = Binary_tree()
     bt.root = Node(6)
-    bt.root.right = Node(5)
     bt.root.left = Node(-1)
-    bt.root.right.left = Node(7)
     bt.root.left.left = Node(10)
+    bt.root.right = Node(5)
+    bt.root.right.left = Node(7)
     bt.root.right.right = Node(3)
+    # print(bt.preorder())
     # print(bt.inorder())
+    # print(bt.post_order())
 
     bst = B_s_t()
     bst.add(4)
@@ -118,4 +138,14 @@ if __name__ == "__main__":
     bst.add(3)
     bst.add(8)
     bst.add(5)
-    print(bst.contains(-5))
+    # print(bst.contains(-5))
+    assert bt.root.value == 6
+    assert bt.root.left.value == -1
+    assert bt.root.left.left.value == 10
+    assert bt.root.right.value == 5
+    assert bt.root.right.left.value == 7
+    assert bt.root.right.right.value == 3
+    print('######## all good #######')
+    # assert bt.inorder == [10, -1, 6, 7, 5, 3]
+    # assert bt.post_order == [10, -1, 7, 3, 5, 6]
+    # assert print(bt.preorder) == [6,-1,10,5,7,3]
