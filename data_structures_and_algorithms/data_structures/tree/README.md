@@ -16,6 +16,10 @@ A binary search tree is a binary tree with the following properties: The data st
 * add--> accepts a value, and adds a new node with that value in the correct location in the binary search tree.
 * contains--> accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once.
 
+
 start time 5.00 </br>
 end time 10.00
-<!-- ![image](../../../assets/.jpg) -->
+
+start time 6.00 </br>
+end time 8.00
+![image](../../../assets/find_max.jpg)
