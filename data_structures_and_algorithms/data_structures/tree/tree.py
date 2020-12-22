@@ -69,8 +69,7 @@ class Binary_tree:
                 if node.right:
                    _walk(node.right)
             _walk(self.root)   
-            return self.max    
-                        
+            return self.max                 
                  
 
 
