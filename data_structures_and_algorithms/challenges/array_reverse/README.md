@@ -12,4 +12,5 @@
 ## Solution
 
 
-![image](assets/reverseArray.png)
+![image](../../../assets/reverseArray.png)
+
