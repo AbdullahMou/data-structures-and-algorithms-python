@@ -6,7 +6,7 @@ def insertion_sort(arr):
             arr[j+1]= arr[j]
             j = j-1
         arr[j + 1] = temp
-    return print(arr)
+    return arr
 
 
 insertion_sort([20,18,12,8,5,-2])      
