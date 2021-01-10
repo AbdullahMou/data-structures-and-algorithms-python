@@ -1,4 +1,4 @@
-stsart time : 7.00
+stsart time : 6.00
 
 end time : 11.00 
 
