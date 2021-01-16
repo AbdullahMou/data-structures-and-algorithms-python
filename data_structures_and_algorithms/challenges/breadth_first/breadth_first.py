@@ -16,3 +16,8 @@ def breadth_first_traversal(self, tree):
             if current.right:
                 queue.append(current.right)
     return lst   
+
+tre=[1,2,3]
+tr=[]    
+tre.append(tr)
+print(tre)

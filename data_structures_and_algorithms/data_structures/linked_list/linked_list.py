@@ -117,17 +117,19 @@ class LinkedList:
         list3 =LinkedList()
         current1 =list1.head
         current2 =list2.head
-        while current1 and current2:
+        while current1 or current2:
             list3.append(current1.value)
             list3.append(current2.value)
             current1=current1.next
             current2=current2.next
-        while current2 :
-            list3.append(current2.value)
-            current2=current2.next     
-        while current1 :
-            list3.append(current1.value)
-            current1=current1.next
+
+            while current2 :
+                list3.append(current2.value)
+                current2=current2.next     
+            while current1 :
+                list3.append(current1.value)
+                current1=current1.next
+                
         return list3
 
 
@@ -171,11 +173,11 @@ class LinkedList:
 #-------------------------------------------------------------------------
 if __name__ == "__main__":
     # node1 = Node(5)
-    node=LinkedList()
-    node2=LinkedList()
+    # node=LinkedList()
+    # node2=LinkedList()
 
-    node.append(1)
-    node.append(3)
+    # node.append(1)
+    # node.append(3)
     # print(node1.value)
     # node.insert(5)
     # node.insert(7)
@@ -187,10 +189,9 @@ if __name__ == "__main__":
     # print(node.includes(6))
     # print(node.ll_kth_from_end(-1))
     # print(node)
-    node.append(4)
-    node.append(3)
-    node.append(1)
+    # node.append(4)
+    # node.append(3)
+    # node.append(1)
     # node2.append(10)
 
     # print(node.palind())
-    
