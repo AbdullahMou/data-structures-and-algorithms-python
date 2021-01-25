@@ -90,7 +90,7 @@ class Stack :
         return True
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     # queue=Queue()
     # queue.enqueue(3)
     # queue.enqueue(1)

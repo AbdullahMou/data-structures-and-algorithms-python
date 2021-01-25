@@ -70,7 +70,15 @@ class Binary_tree:
                    _walk(node.right)
             _walk(self.root)   
             return self.max                 
-                 
+
+    def mergeTrees(self, t1, t2):
+        if not t1 and not t2: return None
+        newroot = Node((t1.value if t1 else 0) + (t2.value if t2 else 0))
+        print(newroot.value)
+
+        newroot.left = self.mergeTrees(t1 and t1.left, t2 and t2.left)
+        newroot.right = self.mergeTrees(t1 and t1.right, t2 and t2.right)
+        return newroot                 
 
 
 class B_s_t(Binary_tree):
@@ -117,14 +125,23 @@ class B_s_t(Binary_tree):
 
 
 if __name__ == "__main__":
-
+    
     bt = Binary_tree()
-    bt.root = Node(6)
+    bt.root =     Node(6)
     bt.root.left = Node(-1)
-    bt.root.left.left = Node(10)
+    bt.root.left.right = Node(10)
     bt.root.right = Node(5)
     bt.root.right.left = Node(7)
     bt.root.right.right = Node(3)
+
+    bt1 = Binary_tree()
+    bt1.root = Node(6)
+    bt1.root.left = Node(-1)
+    bt1.root.left.left = Node(10)
+    bt1.root.right = Node(5)
+    bt1.root.right.left = Node(7)
+    bt1.root.right.right = Node(3)
+
     # print(bt.preorder())
     # print(bt.inorder())
     # print(bt.post_order())
@@ -137,14 +154,19 @@ if __name__ == "__main__":
     bst.add(3)
     bst.add(8)
     bst.add(5)
+
+   
+    bt1.mergeTrees(bt.root,bt1.root)
+    # print(bs2.preorder())
+
     # print(bst.contains(-5))
-    assert bt.root.value == 6
-    assert bt.root.left.value == -1
-    assert bt.root.left.left.value == 10
-    assert bt.root.right.value == 5
-    assert bt.root.right.left.value == 7
-    assert bt.root.right.right.value == 3
-    print('######## all good #######')
+    # assert bt.root.value == 6
+    # assert bt.root.left.value == -1
+    # assert bt.root.left.left.value == 10
+    # assert bt.root.right.value == 5
+    # assert bt.root.right.left.value == 7
+    # assert bt.root.right.right.value == 3
+    # print('######## all good #######')
     # assert bt.inorder == [10, -1, 6, 7, 5, 3]
     # assert bt.post_order == [10, -1, 7, 3, 5, 6]
     # assert print(bt.preorder) == [6,-1,10,5,7,3]
